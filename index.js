@@ -51,7 +51,7 @@ fetch(xmlUrl)
 
 
 const fs = require('fs');
-const saiyansFile = './saiyans.json';
+const saiyansFile = './data.json';
 
 app.use(express.json()); // pour pouvoir lire les données JSON dans le corps de la requête
 
