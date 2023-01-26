@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Ajout d'un saien</title> 
+    </head> 
+    <body> 
+        <form id="form-add-saien"> 
+            <label for="name">Nom:</label> 
+            <input type="text" id="name" name="name"> 
+            <br> 
+            <label for="lvlup">Niveau de lvl-up:</label> 
+            <input type="text" id="lvlup" name="lvlup"> 
+            <br> 
+            <input type="button" value="Ajouter" onclick="addSaien()"> 
+        </form> 
+        <script> 
+
+
+            recuperer les fichieer
+
+            const jsonUrl = 'data.json';
+
+                    fetch(jsonUrl)
+                      .then(response => response.json())
+                      .then(data => {
+                        console.log(data);
+                        // Traitement des données
+                      })
+                      .catch(error => console.error(error));
+
+
+
+
+                      const xmlUrl = 'data.xml';
+
+                    fetch(xmlUrl)
+                      .then(response => response.text())
+                      .then(data => {
+                        console.log(data);
+                        // Traitement des données
+                      })
+                      .catch(error => console.error(error));
+
+
+
+
+                                 // formulaire 
+            function addSaien() { 
+                var formData = new FormData(document.getElementById("form-add-saien")); 
+                fetch("/addSaien", { 
+                    method: "POST", 
+                    body: formData 
+                }) 
+                .then(function(response) { 
+                    return response.json(); 
+                }) 
+                .then(function(data) { 
+                    console.log(data); 
+                }); 
+            }
+
+            app.post("/addSaien", function(req, res) {
+            var saien = req.body;
+            saien.id = saiens.length + 1;
+            saiens.push(saien);
+            res.json(saien); 
+
+        </script> 
+    </body> 
+</html>
+
