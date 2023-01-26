@@ -24,7 +24,7 @@ app.get('/supersaiens', (req, res) => {
 
 
 
-const jsonUrl = 'http://monservice.com/data.json';
+const jsonUrl = 'data.json';
 
 fetch(jsonUrl)
   .then(response => response.json())
@@ -37,7 +37,7 @@ fetch(jsonUrl)
 
 
 
-  const xmlUrl = 'http://monservice.com/data.xml';
+  const xmlUrl = 'data.xml';
 
 fetch(xmlUrl)
   .then(response => response.text())

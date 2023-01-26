@@ -16,7 +16,7 @@
         <script> 
 
 
-            recuperer les fichieer
+            // recuperer les fichier json
 
             const jsonUrl = 'data.json';
 
@@ -30,7 +30,7 @@
 
 
 
-
+            // recuperer les fichier xml
                       const xmlUrl = 'data.xml';
 
                     fetch(xmlUrl)
@@ -45,6 +45,7 @@
 
 
                                  // formulaire 
+                                 
             function addSaien() { 
                 var formData = new FormData(document.getElementById("form-add-saien")); 
                 fetch("/addSaien", { 
